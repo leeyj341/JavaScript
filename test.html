@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>체크박스 컨트롤을 클릭해 주세요</p>
+  <form action="">
+    <label for="checkbox">체크박스</label>
+    <input type="checkbox" onclick="stopDefAction(event);">
+    <input type="checkbox" class="my-button">
+  </form>
+  <script>
+    const myButton = document.querySelector('.my-button');
+    myButton.addEventListener('click', function(event) {
+      event.preventDefault();
+    })
+    function stopDefAction(evt) {
+      evt.preventDefault();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .live {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="live">1</li>
+    <li class="live">2</li>
+    <li class="live">3</li>
+  </ul>
+
+  <ul>
+    <li class="non-live">1</li>
+    <li class="non-live">2</li>
+    <li class="non-live">3</li>
+  </ul>
+  <script>
+    //실시간으로 livelist의 값이 변하기 때문에 제대로 작동하지 않는다.
+    const livelist = document.getElementsByClassName("live")
+    for (let i = 0; i < livelist.length; i++) {
+      livelist[i].className = 'blue';
+    }
+
+    //반복을 위할 땐 이렇게 사용하는 게 좋다
+    const nonlivelist = document.querySelectorAll(".non-live")
+    for (let i = 0; i < nonlivelist.length; i++) {
+      nonlivelist[i].className = 'blue';
+    }
+  </script>
+</body>
+</html>
